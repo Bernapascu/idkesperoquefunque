@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piedra Papel Tijeras</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+</head>
+<body>
+    <div class="container">
+        <div id="player-setup" class="card animate-slide-up">
+            <h2>Ingresa para Jugar</h2>
+            <div class="input-group">
+                <input type="text" id="player-name" placeholder="Tu nombre" autocomplete="off">
+                <button id="start-button" class="btn">Comenzar</button>
+            </div>
+        </div>
+
+        <div id="game-section" class="hidden">
+            <div class="grid">
+                <div class="card animate-slide-up">
+                    <h2 class="welcome-text">¡Hola, <span id="player-display"></span>!</h2>
+                    
+                    <div class="streak">
+                        <div class="streak-label">Racha Actual</div>
+                        <span id="streak">0</span>
+                    </div>
+                    
+                    <div class="choices">
+                        <button class="choice" data-choice="rock" title="Piedra">✊</button>
+                        <button class="choice" data-choice="paper" title="Papel">✋</button>
+                        <button class="choice" data-choice="scissors" title="Tijeras">✌️</button>
+                    </div>
+
+                    <div id="result" class="result"></div>
+                    <div id="bot-choice" class="bot-choice"></div>
+                </div>
+
+                <div class="card animate-slide-up" style="animation-delay: 0.1s">
+                    <h2>Ranking Global</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Jugador</th>
+                                <th>Racha</th>
+                            </tr>
+                        </thead>
+                        <tbody id="ranking-body"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="src/app.js"></script>
+</body>
+</html>
